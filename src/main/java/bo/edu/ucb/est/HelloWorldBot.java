@@ -18,28 +18,33 @@ public class HelloWorldBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "";
+        return "1909892127:AAEZYi2QpWtVsGqs5TJ_4lUb-rC2Y-zebXE";
     }
 
     @Override
     public void onUpdateReceived(Update update) {
+    	int flag=0;
         System.out.println("Llego mensaje: " + update.toString());
-        if(update.hasMessage()) { // Verificamos que tenga mensaje
+        if (update.hasMessage()) { // Verificamos que tenga mensaje
             // Creo el objeto para enviar un mensaje
-            SendMessage message = new SendMessage();
+            SendMessage message=new SendMessage();
             message.setChatId(update.getMessage().getChatId().toString()); //Define a quien le vamos a enviar el mensaje
-            message.setText("Hello " + update.getMessage().getFrom().getFirstName());
+            message.setText("Hello "+update.getMessage().getFrom().getFirstName()+". Envíame dos números separados por una coma (,).");
             try {
                 execute(message); // Envia el mensaje
-            } catch (TelegramApiException e) {
+                flag=1;
+            }
+            catch (TelegramApiException e) {
                 e.printStackTrace();
             }
+        }
+        if (flag==1) {
+        	
         }
     }
 
     @Override
     public String getBotUsername() {
-        return "�cb_est_bot";
+        return "Suma_182Bot";
     }
-    
 }
