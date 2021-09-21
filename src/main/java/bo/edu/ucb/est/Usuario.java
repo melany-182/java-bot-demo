@@ -54,7 +54,6 @@ public class Usuario {
 	
 	@Override
 	public String toString() {
-		return "Usuario [userId=" + userId + ", flag=" + flag + ", opcion=" + opcion + ", num1=" + num1 + ", num2="
-				+ num2 + "]\n";
+		return "Usuario [userId="+userId+", flag="+flag+", opcion="+opcion+", num1="+num1+", num2="+num2+"]\n";
 	}
 }

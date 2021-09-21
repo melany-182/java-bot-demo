@@ -1,6 +1,5 @@
 package bo.edu.ucb.est;
 import java.util.ArrayList;
-
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -16,11 +15,9 @@ public class Calculadora extends TelegramLongPollingBot {
     
     @Override
     public void onUpdateReceived(Update update) { // se ejecuta cada vez que llega un mensaje
-    	
     	for (int i=0; i<usuarios.size(); i++) {
     		System.out.println(usuarios.get(i).toString());
     	}
-    	
     	int aux=0;
     	Long idusuario=update.getMessage().getFrom().getId();
     	for (int i=0; i<usuarios.size(); i++) { // verificación de existencia
@@ -33,7 +30,6 @@ public class Calculadora extends TelegramLongPollingBot {
     		Usuario usuario=new Usuario(idusuario,0);
         	usuarios.add(usuario);
     	}
-    
     	System.out.println("Mensaje: "+update.toString()+"\n");
     	
         if (update.hasMessage()) {
